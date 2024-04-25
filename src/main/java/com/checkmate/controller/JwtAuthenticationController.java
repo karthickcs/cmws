@@ -16,11 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.checkmate.service.JwtUserDetailsService;
 
-
 import com.checkmate.config.JwtTokenUtil;
-import com.checkmate.model.JwtRequest;
-import com.checkmate.model.JwtResponse;
-import com.checkmate.model.UserDTO;
+import com.checkmate.dto.JwtRequest;
+import com.checkmate.dto.JwtResponse;
+import com.checkmate.dto.UserDTO;
 
 @RestController
 @CrossOrigin
@@ -40,14 +39,13 @@ public class JwtAuthenticationController {
 
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
-		final UserDetails userDetails = userDetailsService
-				.loadUserByUsername(authenticationRequest.getUsername());
+		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
 
-		final String token = jwtTokenUtil.generateToken(userDetails,"admin");
+		final String token = jwtTokenUtil.generateToken(userDetails, "admin");
 
 		return ResponseEntity.ok(new JwtResponse(token));
 	}
-	
+
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
 		return ResponseEntity.ok(userDetailsService.save(user));

@@ -1,0 +1,65 @@
+spring:
+  profiles:
+    active: "dev"
+  main:
+    banner-mode: "off"
+  servlet:
+        multipart:
+            enabled: true
+            max-file-size: 100MB
+            max-request-size: 100MB
+server:
+  error:
+    whitelabel:
+      enabled: 'false'
+---
+spring:
+  profiles: dev
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/postgres
+    hikari:
+      connectionTimeout: '20000'
+      maximumPoolSize: '5'
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: 'false'
+    hibernate:
+      ddl-auto: none
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: 'true'
+jwt:
+  secret: javainuse
+
+
+---
+
+spring:
+  profiles: qa
+  datasource:
+    username: myuser
+    url: jdbc:postgresql://34.170.52.181:5432/postgres
+    hikari:
+      connectionTimeout: '20000'
+      maximumPoolSize: '5'
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: 'false'
+    hibernate:
+      ddl-auto: none
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: 'true'
+jwt:
+  secret: javainuse

@@ -10,31 +10,31 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.checkmate.dao.UserDao;
-import com.checkmate.model.DAOUser;
-import com.checkmate.model.UserDTO;
+import com.checkmate.dao.UserRepository;
+import com.checkmate.dto.UserDTO;
+import com.checkmate.entity.UserEntity;
 
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
-	
+
 	@Autowired
-	private UserDao userDao;
+	private UserRepository userDao;
 
 	@Autowired
 	private PasswordEncoder bcryptEncoder;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		DAOUser user = userDao.findByUsername(username);
+		UserEntity user = userDao.findByUsername(username);
 		if (user == null) {
 			throw new UsernameNotFoundException("User not found with username: " + username);
 		}
 		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
 				new ArrayList<>());
 	}
-	
-	public DAOUser save(UserDTO user) {
-		DAOUser newUser = new DAOUser();
+
+	public UserEntity save(UserDTO user) {
+		UserEntity newUser = new UserEntity();
 		newUser.setUsername(user.getUsername());
 		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
 		newUser.setRoles(user.getRoles());
