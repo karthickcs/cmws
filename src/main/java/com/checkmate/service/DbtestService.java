@@ -153,6 +153,7 @@ public class DbtestService {
 			ResultSet rs = dbmd.getTables(null, null, null, table);
 
 			if (rs.next()) {
+				//System.out.println(rs.getString(3));
 				res = "connection success";
 
 			}
