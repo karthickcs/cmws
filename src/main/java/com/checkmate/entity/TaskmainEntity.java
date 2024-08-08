@@ -78,7 +78,33 @@ public class TaskmainEntity {
 	@Column
 	private String sys2type;
 
+	@Column
+	private String tablenameclobsys1;
+	@Column
+	private String starttsclobsys1;
+	@Column
+	private String endtsclobsys1;
+
+	@Column
+	private String tablenameonlinesys1;
+	@Column
+	private String starttsonlinesys1;
+	@Column
+	private String endtsonlinesys1;
 	
+		@Column
+	private String tablenameclobsys2;
+	@Column
+	private String starttsclobsys2;
+	@Column
+	private String endtsclobsys2;
+
+	@Column
+	private String tablenameonlinesys2;
+	@Column
+	private String starttsonlinesys2;
+	@Column
+	private String endtsonlinesys2;
 	
 	public String getFilelocation2() {
 		return filelocation2;
@@ -290,4 +316,100 @@ public class TaskmainEntity {
 		this.sys2type = sys2type;
 	}
 
+	public String getTablenameclobsys1() {
+		return tablenameclobsys1;
+	}
+
+	public void setTablenameclobsys1(String tablenameclobsys1) {
+		this.tablenameclobsys1 = tablenameclobsys1;
+	}
+
+	public String getStarttsclobsys1() {
+		return starttsclobsys1;
+	}
+
+	public void setStarttsclobsys1(String starttsclobsys1) {
+		this.starttsclobsys1 = starttsclobsys1;
+	}
+
+	public String getEndtsclobsys1() {
+		return endtsclobsys1;
+	}
+
+	public void setEndtsclobsys1(String endtsclobsys1) {
+		this.endtsclobsys1 = endtsclobsys1;
+	}
+
+	public String getTablenameonlinesys1() {
+		return tablenameonlinesys1;
+	}
+
+	public void setTablenameonlinesys1(String tablenameonlinesys1) {
+		this.tablenameonlinesys1 = tablenameonlinesys1;
+	}
+
+	public String getStarttsonlinesys1() {
+		return starttsonlinesys1;
+	}
+
+	public void setStarttsonlinesys1(String starttsonlinesys1) {
+		this.starttsonlinesys1 = starttsonlinesys1;
+	}
+
+	public String getEndtsonlinesys1() {
+		return endtsonlinesys1;
+	}
+
+	public void setEndtsonlinesys1(String endtsonlinesys1) {
+		this.endtsonlinesys1 = endtsonlinesys1;
+	}
+
+	public String getTablenameclobsys2() {
+		return tablenameclobsys2;
+	}
+
+	public void setTablenameclobsys2(String tablenameclobsys2) {
+		this.tablenameclobsys2 = tablenameclobsys2;
+	}
+
+	public String getStarttsclobsys2() {
+		return starttsclobsys2;
+	}
+
+	public void setStarttsclobsys2(String starttsclobsys2) {
+		this.starttsclobsys2 = starttsclobsys2;
+	}
+
+	public String getEndtsclobsys2() {
+		return endtsclobsys2;
+	}
+
+	public void setEndtsclobsys2(String endtsclobsys2) {
+		this.endtsclobsys2 = endtsclobsys2;
+	}
+
+	public String getTablenameonlinesys2() {
+		return tablenameonlinesys2;
+	}
+
+	public void setTablenameonlinesys2(String tablenameonlinesys2) {
+		this.tablenameonlinesys2 = tablenameonlinesys2;
+	}
+
+	public String getStarttsonlinesys2() {
+		return starttsonlinesys2;
+	}
+
+	public void setStarttsonlinesys2(String starttsonlinesys2) {
+		this.starttsonlinesys2 = starttsonlinesys2;
+	}
+
+	public String getEndtsonlinesys2() {
+		return endtsonlinesys2;
+	}
+
+	public void setEndtsonlinesys2(String endtsonlinesys2) {
+		this.endtsonlinesys2 = endtsonlinesys2;
+	}
+ 
 }

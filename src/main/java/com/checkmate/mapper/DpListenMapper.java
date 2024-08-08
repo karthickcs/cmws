@@ -14,6 +14,7 @@ public class DpListenMapper {
 		dpListenTable.setInsertts(dpListenDTO.getInsertts());
 		dpListenTable.setUpdatets(dpListenDTO.getUpdatets());
 		dpListenTable.setRowcount(dpListenDTO.getRowcount());
+		dpListenTable.setRowcountsys2(dpListenDTO.getRowcountsys2());
 		dpListenTable.setRunid(dpListenDTO.getRunid());
 		dpListenTable.setFilelocationt2(dpListenDTO.getFilelocationt2());
 		
@@ -34,6 +35,26 @@ public class DpListenMapper {
 		dpListenTable.setSys1type(     dpListenDTO.getSys1type());
 		dpListenTable.setSys2type(     dpListenDTO.getSys2type());
 
+		dpListenTable.setTablenameclobsys2(dpListenDTO.getTablenameClobsys2());
+		dpListenTable.setStarttsclobsys2(  dpListenDTO.getStarttsClobsys2());
+		dpListenTable.setEndtsclobsys2(    dpListenDTO.getEndtsClobsys2());
+		dpListenTable.setTablenameonlinesys2(dpListenDTO.getTablenameOnlinesys2());
+		dpListenTable.setStarttsonlinesys2(  dpListenDTO.getStarttsOnlinesys2());
+		dpListenTable.setEndtsonlinesys2(    dpListenDTO.getEndtsOnlinesys2());
+		
+		dpListenTable.setTablenameclobsys1(dpListenDTO.getTablenameClobsys1());
+		dpListenTable.setStarttsclobsys1(  dpListenDTO.getStarttsClobsys1());
+		dpListenTable.setEndtsclobsys1(    dpListenDTO.getEndtsClobsys1());
+		dpListenTable.setTablenameonlinesys1(dpListenDTO.getTablenameOnlinesys1());
+		dpListenTable.setStarttsonlinesys1(  dpListenDTO.getStarttsOnlinesys1());
+		dpListenTable.setEndtsonlinesys1(    dpListenDTO.getEndtsOnlinesys1());
+		dpListenTable.setGenerateMetadata(    dpListenDTO.getGenerateMetadata());
+		
+		dpListenTable.setBatchtime(    dpListenDTO.getBatchtime());
+		dpListenTable.setComparetime(dpListenDTO.getComparetime());
+		dpListenTable.setDataloadtime(  dpListenDTO.getDataloadtime());
+		dpListenTable.setReportgentime(    dpListenDTO.getReportgentime());
+		dpListenTable.setRowsprocessed(    dpListenDTO.getRowsprocessed());
 		return dpListenTable;
 	}
 
@@ -46,6 +67,7 @@ public class DpListenMapper {
 		dpListenDTO.setInsertts(dpListenTable.getInsertts());
 		dpListenDTO.setUpdatets(dpListenTable.getUpdatets());
 		dpListenDTO.setRowcount(dpListenTable.getRowcount());
+		dpListenDTO.setRowcountsys2(dpListenTable.getRowcountsys2());
 		dpListenDTO.setRunid(dpListenTable.getRunid());
 		dpListenDTO.setFilelocationt2(dpListenTable.getFilelocationt2());
 		
@@ -65,7 +87,26 @@ public class DpListenMapper {
 		dpListenDTO.setEndtssys2(    dpListenTable.getEndtssys2());
 		dpListenDTO.setSys1type(     dpListenTable.getSys1type());
 		dpListenDTO.setSys2type(     dpListenTable.getSys2type());
-
+		dpListenDTO.setTablenameClobsys2(dpListenTable.getTablenameclobsys2());
+		dpListenDTO.setStarttsClobsys2(  dpListenTable.getStarttsclobsys2());
+		dpListenDTO.setEndtsClobsys2(    dpListenTable.getEndtsclobsys2());
+		dpListenDTO.setTablenameOnlinesys2(dpListenTable.getTablenameonlinesys2());
+		dpListenDTO.setStarttsOnlinesys2(  dpListenTable.getStarttsonlinesys2());
+		dpListenDTO.setEndtsOnlinesys2(    dpListenTable.getEndtsonlinesys2());
+		
+		dpListenDTO.setTablenameClobsys1(dpListenTable.getTablenameclobsys1());
+		dpListenDTO.setStarttsClobsys1(  dpListenTable.getStarttsclobsys1());
+		dpListenDTO.setEndtsClobsys1(    dpListenTable.getEndtsclobsys1());
+		dpListenDTO.setTablenameOnlinesys1(dpListenTable.getTablenameonlinesys1());
+		dpListenDTO.setStarttsOnlinesys1(  dpListenTable.getStarttsonlinesys1());
+		dpListenDTO.setEndtsOnlinesys1(    dpListenTable.getEndtsonlinesys1());
+		dpListenDTO.setGenerateMetadata(    dpListenTable.getGenerateMetadata());
+		
+		dpListenDTO.setBatchtime(    dpListenTable.getBatchtime());
+		dpListenDTO.setComparetime(dpListenTable.getComparetime());
+		dpListenDTO.setDataloadtime(  dpListenTable.getDataloadtime());
+		dpListenDTO.setReportgentime(    dpListenTable.getReportgentime());
+		dpListenDTO.setRowsprocessed(    dpListenTable.getRowsprocessed());
 		return dpListenDTO;
 	}
 }

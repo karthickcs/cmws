@@ -29,6 +29,11 @@ public class DpListenController {
 		return dpListenService.getAllDpListen();
 	}
 
+	
+	@GetMapping("/cleanup")
+	private String cleanup() {
+		return dpListenService.cleanup();
+	}
 	@GetMapping("/dplisten/{dplistenid}")
 	private DpListenDTO getdplistens(@PathVariable("dplistenid") int dplistenid) {
 		return dpListenService.getDpListenById(dplistenid);
@@ -37,6 +42,11 @@ public class DpListenController {
 	@GetMapping("/dplisten/runids/{taskid}")
 	private List<DpListenDTO> getRunIds(@PathVariable("taskid") int taskid) {
 		return dpListenService.getDpListenByTaskRunId(taskid);
+	}
+	
+	@GetMapping("/dplistenmeta/{taskid}")
+	private List<DpListenDTO> getRunIdforMeta(@PathVariable("taskid") int taskid) {
+		return dpListenService.getDpListenMeta(taskid);
 	}
 	// creating a delete mapping that deletes a specified dplisten
 	@DeleteMapping("/dplisten/{dplistenid}")

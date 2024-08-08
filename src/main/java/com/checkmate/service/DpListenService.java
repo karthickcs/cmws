@@ -20,19 +20,7 @@ public class DpListenService {
 	@Autowired
 	private DpListenTableRepository dpListenTableRepository;
 
-	public DpListenEntity save(DpListenDTO dpListenDTO) {
-		DpListenEntity dpListenTable = new DpListenEntity();
-		dpListenTable.setTaskname(dpListenDTO.getTaskname());
-		dpListenTable.setTaskid(dpListenDTO.getTaskid());
-		dpListenTable.setFilelocation(dpListenDTO.getFilelocation());
-		dpListenTable.setStatus(dpListenDTO.getStatus());
-		dpListenTable.setInsertts(dpListenDTO.getInsertts());
-		dpListenTable.setUpdatets(dpListenDTO.getUpdatets());
-		dpListenTable.setRowcount(dpListenDTO.getRowcount());
-		dpListenTable.setRunid(dpListenDTO.getRunid());
-		dpListenTableRepository.findRunid(0);
-		return dpListenTableRepository.save(dpListenTable);
-	}
+ 
 
 	public List<DpListenDTO> getAllDpListen() {
 
@@ -49,9 +37,15 @@ public class DpListenService {
 
 	public int saveOrUpdate(DpListenDTO dpListenDTO) {
 		Integer run = dpListenTableRepository.findRunid(dpListenDTO.getTaskid());
-		if (run==null)
+		if (run==null || run==-1)
 			run=0;
 		dpListenDTO.setRunid(run.intValue()+1);
+		if (dpListenDTO.getGenerateMetadata().equals("true")) {
+			dpListenDTO.setRunid(-1);
+			dpListenTableRepository.deleteOldmeta(dpListenDTO.getTaskid(),-1);
+		}
+		 
+			
 		DpListenEntity dpListenTable = DpListenMapper.dtoToEntity(dpListenDTO);
 		DpListenEntity dpListenEntity = dpListenTableRepository.save(dpListenTable);
 		return dpListenEntity.getDpid();
@@ -71,5 +65,18 @@ public class DpListenService {
 		dpListenTableRepository.findAllRunid(taskid)
 				.forEach(DpListenTable -> DpListenDTOList.add(DpListenMapper.entityToDto(DpListenTable)));
 		return DpListenDTOList;
+	}
+	
+
+	public List<DpListenDTO> getDpListenMeta(int taskid) {
+		List<DpListenDTO> DpListenDTOList = new ArrayList<DpListenDTO>();
+		dpListenTableRepository.findAllMeta(taskid,-1)
+				.forEach(DpListenTable -> DpListenDTOList.add(DpListenMapper.entityToDto(DpListenTable)));
+		return DpListenDTOList;
+	}
+
+	public String cleanup() {
+		dpListenTableRepository.cleanup();
+		return "{ \"status\" : \"Clean up Successful\" }";
 	}
 }

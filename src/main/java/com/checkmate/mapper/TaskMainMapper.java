@@ -33,7 +33,19 @@ public class TaskMainMapper {
 		taskmain.setEndtssys2(    taskMainDTO.getEndtssys2());
 		taskmain.setSys1type(     taskMainDTO.getSys1type());
 		taskmain.setSys2type(     taskMainDTO.getSys2type());
-
+		taskmain.setTablenameclobsys2(taskMainDTO.getTablenameClobsys2());
+		taskmain.setStarttsclobsys2(  taskMainDTO.getStarttsClobsys2());
+		taskmain.setEndtsclobsys2(    taskMainDTO.getEndtsClobsys2());
+		taskmain.setTablenameonlinesys2(taskMainDTO.getTablenameOnlinesys2());
+		taskmain.setStarttsonlinesys2(  taskMainDTO.getStarttsOnlinesys2());
+		taskmain.setEndtsonlinesys2(    taskMainDTO.getEndtsOnlinesys2());
+		
+		taskmain.setTablenameclobsys1(taskMainDTO.getTablenameClobsys1());
+		taskmain.setStarttsclobsys1(  taskMainDTO.getStarttsClobsys1());
+		taskmain.setEndtsclobsys1(    taskMainDTO.getEndtsClobsys1());
+		taskmain.setTablenameonlinesys1(taskMainDTO.getTablenameOnlinesys1());
+		taskmain.setStarttsonlinesys1(  taskMainDTO.getStarttsOnlinesys1());
+		taskmain.setEndtsonlinesys1(    taskMainDTO.getEndtsOnlinesys1());
 		return taskmain;
 	}
 
@@ -67,6 +79,19 @@ public class TaskMainMapper {
 		TaskMainDTO.setSys1type(     taskmainEntity.getSys1type());
 		TaskMainDTO.setSys2type(     taskmainEntity.getSys2type());
 
+		TaskMainDTO.setTablenameClobsys2(taskmainEntity.getTablenameclobsys2());
+		TaskMainDTO.setStarttsClobsys2(  taskmainEntity.getStarttsclobsys2());
+		TaskMainDTO.setEndtsClobsys2(    taskmainEntity.getEndtsclobsys2());
+		TaskMainDTO.setTablenameOnlinesys2(taskmainEntity.getTablenameonlinesys2());
+		TaskMainDTO.setStarttsOnlinesys2(  taskmainEntity.getStarttsonlinesys2());
+		TaskMainDTO.setEndtsOnlinesys2(    taskmainEntity.getEndtsonlinesys2());
+		
+		TaskMainDTO.setTablenameClobsys1(taskmainEntity.getTablenameclobsys1());
+		TaskMainDTO.setStarttsClobsys1(  taskmainEntity.getStarttsclobsys1());
+		TaskMainDTO.setEndtsClobsys1(    taskmainEntity.getEndtsclobsys1());
+		TaskMainDTO.setTablenameOnlinesys1(taskmainEntity.getTablenameonlinesys1());
+		TaskMainDTO.setStarttsOnlinesys1(  taskmainEntity.getStarttsonlinesys1());
+		TaskMainDTO.setEndtsOnlinesys1(    taskmainEntity.getEndtsonlinesys1());
 		return TaskMainDTO;
 	}
 }
